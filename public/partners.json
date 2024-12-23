@@ -1,0 +1,38 @@
+[
+    {
+        "name": "FeedLoop",
+        "description": "Real-time review monitoring system for businesses.",
+        "logo": "https://i.ibb.co.com/Pmm6LgN/feedLoop.jpg",
+        "link": "https://www.feedloop.ai/"
+    },
+    {
+        "name": "FitTrack",
+        "description": "Your trusted source for fitness gear and trainer reviews.",
+        "logo": "https://i.ibb.co.com/Jry5YJ8/fit-track.png",
+        "link": "https://tryfittrack.com/"
+    },
+    {
+        "name": "Insight360",
+        "description": "Comprehensive analytics for better decision-making.",
+        "logo": "https://i.ibb.co.com/1TR5x2j/insight360.png",
+        "link": "https://insight360.ae/"
+    },
+    {
+        "name": "MealCheck",
+        "description": "Delivering authentic reviews for ready-to-eat meals.",
+        "logo": "https://i.ibb.co.com/qB0sDyp/meal-check.jpg",
+        "link": "https://www.mealcheck.app/"
+    },
+    {
+        "name": "NextStay",
+        "description": "Discover the best hotel deals with reliable reviews.",
+        "logo": "https://i.ibb.co.com/KF85SZg/nextstay.jpg",
+        "link": "https://www.nextstay.ai/"
+    },
+    {
+        "name": "QuickServe",
+        "description": "Fast and reliable food delivery reviews at your fingertips.",
+        "logo": "https://i.ibb.co.com/QXDRJfm/quick-serve.jpg",
+        "link": "https://quickserve.cummins.com/"
+    }
+]
