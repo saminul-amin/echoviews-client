@@ -1,3 +1,11 @@
+import Banner from "./Banner";
+import HeroSection from "./HeroSection";
+
 export default function Home() {
-    return <div>home</div>
+  return (
+    <div>
+      <Banner />
+      <HeroSection />
+    </div>
+  );
 }

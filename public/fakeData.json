@@ -1,0 +1,137 @@
+[
+    {
+        "image": "https://i.ibb.co.com/g7K4mV7/cleaning.jpg",
+        "title": "Premium Cleaning Service",
+        "company": "SparkClean Solutions",
+        "website": "https://www.sparkclean.com",
+        "description": "Top-notch cleaning services for homes and offices, ensuring a spotless environment.",
+        "category": "Cleaning",
+        "price": 50.00
+    },
+    {
+        "image": "https://i.ibb.co.com/C77jqpd/web-designing-service.png",
+        "title": "Custom Web Design",
+        "company": "PixelCraft Studios",
+        "website": "https://www.pixelcraft.com",
+        "description": "Creative and responsive web design solutions tailored to your needs.",
+        "category": "IT & Software",
+        "price": 299.99
+    },
+    {
+        "image": "https://i.ibb.co.com/nj159dh/math-tutoring.jpg",
+        "title": "Math Tutoring Service",
+        "company": "MathMasters",
+        "website": "https://www.mathmasters.com",
+        "description": "Expert one-on-one math tutoring for students of all levels.",
+        "category": "Education",
+        "price": 30.00
+    },
+    {
+        "image": "https://i.ibb.co.com/3mQDQK8/food-delivery.jpg",
+        "title": "Gourmet Food Delivery",
+        "company": "TastyBites Delivery",
+        "website": "https://www.tastybites.com",
+        "description": "Quick and reliable delivery of gourmet meals to your doorstep.",
+        "category": "Food & Beverages",
+        "price": 15.99
+    },
+    {
+        "image": "https://i.ibb.co.com/Y36Xqf5/logo-design.jpg",
+        "title": "Logo Design Service",
+        "company": "CreativeLogos Inc.",
+        "website": "https://www.creativelogos.com",
+        "description": "Professional logo design to establish your brand identity.",
+        "category": "Graphic Design",
+        "price": 80.00
+    },
+    {
+        "image": "https://i.ibb.co.com/Qr6FZ5K/fitness.jpg",
+        "title": "Online Fitness Coaching",
+        "company": "FitLife Coaching",
+        "website": "https://www.fitlife.com",
+        "description": "Personalized fitness plans and virtual training sessions.",
+        "category": "Health & Fitness",
+        "price": 100.00
+    },
+    {
+        "image": "https://i.ibb.co.com/mHL3M97/landsaping.jpg",
+        "title": "Landscaping Services",
+        "company": "GreenScape Pros",
+        "website": "https://www.greenscape.com",
+        "description": "Transform your garden with our professional landscaping services.",
+        "category": "Home Improvement",
+        "price": 200.00
+    },
+    {
+        "image": "https://i.ibb.co.com/R3QH0ZY/digital-marketing.webp",
+        "title": "Digital Marketing Solutions",
+        "company": "MarketMavens",
+        "website": "https://www.marketmavens.com",
+        "description": "Grow your business with targeted and effective digital marketing strategies.",
+        "category": "Marketing",
+        "price": 500.00
+    },
+    {
+        "image": "https://i.ibb.co.com/tc7ZYd9/photography.jpg",
+        "title": "Event Photography",
+        "company": "ShutterPro Studio",
+        "website": "https://www.shutterpro.com",
+        "description": "Capture your special moments with our expert photography services.",
+        "category": "Photography",
+        "price": 150.00
+    },
+    {
+        "image": "https://i.ibb.co.com/DkYbNkP/car-repair.webp",
+        "title": "Car Repair Service",
+        "company": "AutoFix Garage",
+        "website": "https://www.autofix.com",
+        "description": "Reliable car repair and maintenance services at competitive prices.",
+        "category": "Automotive",
+        "price": 70.00
+    },
+    {
+        "image": "https://i.ibb.co.com/k087H8V/pet-care.jpg",
+        "title": "Pet Care Services",
+        "company": "HappyPaws PetCare",
+        "website": "https://www.happypaws.com",
+        "description": "Professional pet sitting and grooming services for your furry friends.",
+        "category": "Pet Care",
+        "price": 25.00
+    },
+    {
+        "image": "https://i.ibb.co.com/kSBCgW3/mobile-repair.jpg",
+        "title": "Mobile Repair Service",
+        "company": "QuickFix Mobiles",
+        "website": "https://www.quickfixmobiles.com",
+        "description": "Fast and affordable mobile phone repair services.",
+        "category": "Electronics",
+        "price": 40.00
+    },
+    {
+        "image": "https://i.ibb.co.com/jT77bKk/translation-services.jpg",
+        "title": "Translation Services",
+        "company": "LinguaPro Translators",
+        "website": "https://www.linguapro.com",
+        "description": "Accurate and reliable translation services for all major languages.",
+        "category": "Language Services",
+        "price": 0.10
+    },
+    {
+        "image": "https://i.ibb.co.com/fGQXXr1/hair-salon.jpg",
+        "title": "Hair Styling Service",
+        "company": "Glamour Hair Studio",
+        "website": "https://www.glamourhair.com",
+        "description": "Trendy haircuts and styling by professional stylists.",
+        "category": "Beauty & Wellness",
+        "price": 30.00
+    },
+    {
+        "image": "https://i.ibb.co.com/MMxyNMw/tax-consulting.jpg",
+        "title": "Tax Consulting Services",
+        "company": "TaxWise Advisors",
+        "website": "https://www.taxwise.com",
+        "description": "Expert tax advice and filing assistance for individuals and businesses.",
+        "category": "Finance",
+        "price": 120.00
+    }
+]
