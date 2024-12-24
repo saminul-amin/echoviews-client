@@ -37,6 +37,42 @@ export default function Navbar() {
           Services
         </NavLink>
       </li>
+      {user?.email && (
+        <li>
+          <NavLink
+            to="/add-service"
+            className={({ isActive }) =>
+              isActive ? "underline bg-base-200 font-bold" : ""
+            }
+          >
+            Add Service
+          </NavLink>
+        </li>
+      )}
+      {user?.email && (
+        <li>
+          <NavLink
+            to="/my-services"
+            className={({ isActive }) =>
+              isActive ? "underline bg-base-200 font-bold" : ""
+            }
+          >
+            My Services
+          </NavLink>
+        </li>
+      )}
+      {user?.email && (
+        <li>
+          <NavLink
+            to="/my-reviews"
+            className={({ isActive }) =>
+              isActive ? "underline bg-base-200 font-bold" : ""
+            }
+          >
+            My Reviews
+          </NavLink>
+        </li>
+      )}
     </>
   );
   //   console.log(user);

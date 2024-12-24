@@ -6,6 +6,10 @@ import SignUp from "../components/SignUp";
 import Home from "../components/Home";
 import Services from "../components/Services";
 import ServiceDetails from "../components/ServiceDetails";
+import AddService from "../components/AddService";
+import MyServices from "../components/MyServices";
+import MyReviews from "../components/MyReviews";
+import PrivateRoute from "../routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -20,12 +24,35 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
-        loader: () => fetch("/fakeData.json"),
+        loader: () => fetch("http://localhost:5000/services"),
       },
       {
         path: "service-details",
-        element: <ServiceDetails />,
-        loader: () => fetch("/fakeData.json"),
+        element: (
+          <PrivateRoute>
+            <ServiceDetails />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "my-services",
+        element: (
+          <PrivateRoute>
+            <MyServices />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "my-reviews",
+        element: (
+          <PrivateRoute>
+            <MyReviews />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/add-service",
+        element: <AddService />,
       },
       {
         path: "signin",

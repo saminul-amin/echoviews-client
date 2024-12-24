@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import Intro from "./Intro";
+import AddReview from "./AddReview";
 
 export default function ServiceDetails() {
   const location = useLocation();
@@ -34,6 +35,8 @@ export default function ServiceDetails() {
           </div>
         </div>
       </div>
+
+      <AddReview service={service} />
     </div>
   );
 }
