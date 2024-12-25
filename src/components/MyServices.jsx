@@ -1,3 +1,4 @@
+
 import { useContext, useEffect, useState } from "react";
 import Intro from "./Intro";
 import { AuthContext } from "../providers/AuthProvider";
@@ -9,9 +10,9 @@ import Swal from "sweetalert2";
 const heading = "My Services";
 const desc =
   "Discover the services I've added so far. Browse the table below for detailed insights into each service,\ntailored to meet diverse needs and requirements.";
-const description = <pre>{desc}</pre>;
 
 export default function MyServices() {
+  const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [service, setService] = useState({});
   const { user } = useContext(AuthContext);
@@ -31,6 +32,16 @@ export default function MyServices() {
       .get(`http://localhost:5000/my-services?email=${email}`)
       .then((res) => setData(res.data));
   }, [data]);
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    // console.log(e.target.value);
+  };
+  const searchedData = data.filter(
+    (service) =>
+      service.title.toLowerCase().includes(search.toLowerCase()) ||
+      service.description.toLowerCase().includes(search.toLowerCase())
+  );
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -111,8 +122,17 @@ export default function MyServices() {
 
   return (
     <div>
-      <Intro heading={heading} desc={description} />
+      <Intro heading={heading} desc={desc} />
       {/* {data.length} */}
+      <div className="flex items-center w-11/12 justify-end my-8">
+        <input
+          type="text"
+          className="border-gray-500 border-2 rounded-xl py-3 px-4 w-1/3"
+          placeholder="Search..."
+          onChange={handleChange}
+          value={search}
+        />
+      </div>
       <div className="w-5/6 mx-auto">
         <div className="overflow-x-auto">
           <table className="table">
@@ -129,7 +149,7 @@ export default function MyServices() {
             </thead>
             <tbody>
               {/* row 1 */}
-              {data.map((service, idx) => (
+              {searchedData.map((service, idx) => (
                 <tr key={idx}>
                   <th>{idx + 1}</th>
                   <td>{service.title}</td>

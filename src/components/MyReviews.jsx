@@ -10,7 +10,6 @@ import Swal from "sweetalert2";
 const heading = "My Reviews";
 const desc =
   "Explore detailed feedback and insights on various services,\nshowcasing experiences and evaluations all in one place!";
-const description = <pre>{desc}</pre>;
 
 export default function MyReviews() {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,7 +100,7 @@ export default function MyReviews() {
 
   return (
     <div>
-      <Intro heading={heading} desc={description} />
+      <Intro heading={heading} desc={desc} />
       {/* {data.length} */}
       <div className="w-5/6 mx-auto">
         <div className="overflow-x-auto">
