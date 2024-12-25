@@ -1,18 +1,13 @@
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import Loading from "./Loading";
 import Rating from "./Rating";
 import axios from "axios";
 
 export default function AddReview({ service }) {
-  const { user, loading } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState("");
   const textAreaRef = useRef(null);
-
-  if (loading) {
-    return <Loading />;
-  }
 
   const email = user.email;
   const date = new Date().toISOString().slice(0, 10);

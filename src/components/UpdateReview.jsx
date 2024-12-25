@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
 import Swal from "sweetalert2";
-import { AuthContext } from "../providers/AuthProvider";
+import { useLocation, useNavigate } from "react-router";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
-export default function AddService() {
-  const { user } = useContext(AuthContext);
+export default function UpdateReview() {
+  const location = useLocation();
+  const service = location.state;
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -18,10 +17,8 @@ export default function AddService() {
     const description = form.description.value;
     const category = form.category.value;
     const price = form.price.value;
-    const date = new Date().toISOString().slice(0, 10);
-    const email = user?.email;
 
-    const service = {
+    const updatedService = {
       image,
       title,
       company,
@@ -29,28 +26,33 @@ export default function AddService() {
       description,
       category,
       price,
-      date,
-      email,
     };
-    console.log(service);
+    console.log(updatedService);
+    console.log(service._id);
 
-    axios.post("http://localhost:5000/services", service).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire({
-          title: "Success!",
-          text: "The service is added successfully!",
-          icon: "success",
-        });
-        navigate("/services");
-      }
-    });
+    axios
+      .put(
+        `http://localhost:5000/update-service/${service._id}`,
+        updatedService
+      )
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.modifiedCount) {
+          Swal.fire({
+            title: "Success!",
+            text: "The service is updated successfully!",
+            icon: "success",
+          });
+          navigate("/my-services");
+        }
+      });
   };
 
   return (
-    <div className="mt-12 min-h-screen flex justify-center items-center">
-      <div className="card bg-base-200 w-full max-w-xl shrink-0 rounded-2xl p-10 ">
+    <div className="min-h-screen flex justify-center items-center">
+      <div className="card bg-base-200 w-full max-w-lg shrink-0 rounded-2xl p-10 ">
         <h2 className="text-2xl font-semibold text-center">
-          Fill up this form to add new service
+          Fill up this form to update the service
         </h2>
         <form onSubmit={handleSubmit} className="card-body">
           <div className="form-control">
@@ -62,6 +64,7 @@ export default function AddService() {
               type="url"
               placeholder="Enter the URL of the image of the Service"
               className="input input-bordered"
+              defaultValue={service.image}
               required
             />
           </div>
@@ -74,6 +77,7 @@ export default function AddService() {
               type="text"
               placeholder="Enter the title of the Service"
               className="input input-bordered"
+              defaultValue={service.title}
               required
             />
           </div>
@@ -86,6 +90,7 @@ export default function AddService() {
               type="text"
               placeholder="Enter the company name of the Service"
               className="input input-bordered"
+              defaultValue={service.company}
               required
             />
           </div>
@@ -98,6 +103,7 @@ export default function AddService() {
               type="url"
               placeholder="Enter the URL of the website of the Service"
               className="input input-bordered"
+              defaultValue={service.website}
               required
             />
           </div>
@@ -110,6 +116,7 @@ export default function AddService() {
               type="text"
               placeholder="Enter a brief description of the Service"
               className="input input-bordered"
+              defaultValue={service.description}
               required
             />
           </div>
@@ -122,6 +129,7 @@ export default function AddService() {
               type="text"
               placeholder="Enter the category of the Service"
               className="input input-bordered"
+              defaultValue={service.category}
               required
             />
           </div>
@@ -135,12 +143,13 @@ export default function AddService() {
               step="0.01"
               placeholder="Enter the price of the Service"
               className="input input-bordered"
+              defaultValue={service.price}
               required
             />
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-neutral font-semibold text-lg text-white rounded-md">
-              Submit
+              Update Service
             </button>
           </div>
         </form>
