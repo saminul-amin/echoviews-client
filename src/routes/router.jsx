@@ -10,8 +10,6 @@ import AddService from "../components/AddService";
 import MyServices from "../components/MyServices";
 import MyReviews from "../components/MyReviews";
 import PrivateRoute from "../routes/PrivateRoute";
-import UpdateService from "../components/UpdateService";
-import UpdateReview from "../components/UpdateReview";
 
 const router = createBrowserRouter([
   {
@@ -57,22 +55,6 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddService />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "update-service",
-        element: (
-          <PrivateRoute>
-            <UpdateService />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "update-review",
-        element: (
-          <PrivateRoute>
-            <UpdateReview />
           </PrivateRoute>
         ),
       },

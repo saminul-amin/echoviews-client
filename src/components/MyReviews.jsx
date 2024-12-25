@@ -4,7 +4,6 @@ import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import Swal from "sweetalert2";
 
