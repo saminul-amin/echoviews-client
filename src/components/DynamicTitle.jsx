@@ -6,17 +6,17 @@ const DynamicTitle = () => {
 
   useEffect(() => {
     const titleMap = {
-      "/": "Home | MovieScapes",
-      "/all-movies": "All Movies | MovieScapes",
-      "/signin": "Sign In | MovieScapes",
-      "/signup": "Sign Up | MovieScapes",
-      "/offers": "Student Offers | MovieScapes",
-      "/add-movie": "Add Movie | MovieScapes",
-      "/favorites": "My Favorites | MovieScapes",
-      "/movie-detail": "Movie Details | MovieScapes",
+      "/": "Home | EchoViews",
+      "/all-services": "All Services | EchoViews",
+      "/signin": "Sign In | EchoViews",
+      "/signup": "Sign Up | EchoViews",
+      "/add-service": "Add Service | EchoViews",
+      "/my-reviews": "My Reviews | EchoViews",
+      "/my-services": "My Services | EchoViews",
+      "/service-details": "Service Details | EchoViews",
     };
 
-    document.title = titleMap[location.pathname] || "MovieScapes";
+    document.title = titleMap[location.pathname] || "EchoViews";
   }, [location]);
 
   return null;

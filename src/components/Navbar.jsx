@@ -117,29 +117,14 @@ export default function Navbar() {
         </div>
         {user && user?.email ? (
           <div className="navbar-end gap-3">
-            <div className="flex justify-end">
-              <input
-                type="checkbox"
-                className="checkbox"
-                id="checkbox"
-                // onClick={toggleTheme}
+            <div className="flex gap-2 bg-base-300 px-4 py-2 rounded-xl items-center group">
+              <img
+                className="w-9 h-9 rounded-full"
+                src={user?.photoURL}
+                alt=""
               />
-              <label htmlFor="checkbox" className="checkbox-label">
-                <i className="fas fa-moon"></i>
-                <i className="fas fa-sun"></i>
-                <span className="ball"></span>
-              </label>
+              <p className="hidden group-hover:block">{user.displayName}</p>
             </div>
-            <Link to={"/profile"}>
-              <div className="flex gap-2 bg-base-300 px-4 py-2 rounded-xl items-center group">
-                <img
-                  className="w-9 h-9 rounded-full"
-                  src={user?.photoURL}
-                  alt=""
-                />
-                <p className="hidden group-hover:block">{user.displayName}</p>
-              </div>
-            </Link>
             <button
               onClick={userSignOut}
               className="bg-base-300 px-4 py-3 rounded-xl"
