@@ -9,6 +9,8 @@ export default function AddReview({ service }) {
   const [review, setReview] = useState("");
   const textAreaRef = useRef(null);
 
+  if(user === null) return ;
+
   const email = user.email;
   const date = new Date().toISOString().slice(0, 10);
 

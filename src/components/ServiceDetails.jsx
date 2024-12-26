@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import Intro from "./Intro";
 import AddReview from "./AddReview";
 import { motion } from "framer-motion";
+import AllReviews from "./AllReviews";
 
 export default function ServiceDetails() {
   const location = useLocation();
@@ -40,6 +41,7 @@ export default function ServiceDetails() {
       </motion.div>
 
       <AddReview service={service} />
+      <AllReviews title={service.title} />
     </div>
   );
 }

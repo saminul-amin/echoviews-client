@@ -1,8 +1,9 @@
+import { useState } from "react";
+
 import Banner from "./Banner";
 import HeroSection from "./HeroSection";
 import MeetPartners from "./MeetPartners";
 import DynamicTitle from "./DynamicTitle";
-import { useState } from "react";
 import SearchResult from "./SearchResult";
 
 export default function Home() {
@@ -27,11 +28,11 @@ export default function Home() {
         <>
           <Banner /> <HeroSection />
           <MeetPartners />
-          <DynamicTitle />
         </>
       ) : (
         <SearchResult keyword={search} />
       )}
+      <DynamicTitle />
     </div>
   );
 }
