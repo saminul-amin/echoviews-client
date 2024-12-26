@@ -7,6 +7,7 @@ import { MdDelete } from "react-icons/md";
 import Rating from "./Rating";
 import Swal from "sweetalert2";
 import { SlLike, SlDislike } from "react-icons/sl";
+import useAxios from "../hooks/useAxios";
 
 const heading = "My Reviews";
 const desc =
@@ -20,19 +21,20 @@ export default function MyReviews() {
   const textAreaRef = useRef(null);
   const [rating, setRating] = useState(null);
   const [updatedReview, setUpdatedReview] = useState("");
+  const axiosSecure = useAxios();
   const email = user.email;
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/my-reviews", {
+    axiosSecure
+      .get("my-reviews", {
         params: { email: email },
       })
       .then((res) => console.log(res.data));
   }, []);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/my-reviews?email=${email}`)
+    axiosSecure
+      .get(`my-reviews?email=${email}`)
       .then((res) => setData(res.data));
   }, []);
 
@@ -42,7 +44,7 @@ export default function MyReviews() {
   // console.log(rating);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/my-reviews/${id}`).then((res) => {
+    axiosSecure.delete(`my-reviews/${id}`).then((res) => {
       if (res.data.deletedCount > 0) {
         Swal.fire({
           title: "Deleted!",
@@ -68,19 +70,17 @@ export default function MyReviews() {
 
     const newReview = { review, rating };
 
-    axios
-      .put(`http://localhost:5000/my-reviews/${id}`, newReview)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.modifiedCount) {
-          Swal.fire({
-            title: "Success!",
-            text: "The review is updated successfully!",
-            icon: "success",
-          });
-          closeModal();
-        }
-      });
+    axiosSecure.put(`my-reviews/${id}`, newReview).then((res) => {
+      console.log(res.data);
+      if (res.data.modifiedCount) {
+        Swal.fire({
+          title: "Success!",
+          text: "The review is updated successfully!",
+          icon: "success",
+        });
+        closeModal();
+      }
+    });
   };
 
   const handleClose = () => {
@@ -134,13 +134,19 @@ export default function MyReviews() {
                     className="btn join-item text-xl"
                     onClick={() => openModal(review)}
                   >
-                    <FaEdit /> <span className="text-lg lg:inline hidden">Update Review</span>
+                    <FaEdit />{" "}
+                    <span className="text-lg lg:inline hidden">
+                      Update Review
+                    </span>
                   </button>
                   <button
                     onClick={() => handleDelete(review._id)}
                     className="btn join-item text-xl"
                   >
-                    <MdDelete /> <span className="text-lg lg:inline hidden">Delete Review</span>
+                    <MdDelete />{" "}
+                    <span className="text-lg lg:inline hidden">
+                      Delete Review
+                    </span>
                   </button>
                 </div>
               </div>

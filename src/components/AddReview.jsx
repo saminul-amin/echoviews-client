@@ -2,14 +2,16 @@ import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Rating from "./Rating";
 import axios from "axios";
+import useAxios from "../hooks/useAxios";
 
 export default function AddReview({ service }) {
   const { user } = useContext(AuthContext);
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState("");
+  const axiosSecure = useAxios();
   const textAreaRef = useRef(null);
 
-  if(user === null) return ;
+  if (user === null) return;
 
   const email = user.email;
   const date = new Date().toISOString().slice(0, 10);
@@ -17,12 +19,12 @@ export default function AddReview({ service }) {
   const handleRatingChange = (rate) => {
     setRating(rate);
   };
-  console.log(rating);
+  // console.log(rating);
 
   const handleAddReview = () => {
     const data = { review, rating, email, date, service };
-    console.log(data);
-    axios.post("http://localhost:5000/reviews", data).then((res) => {
+    // console.log(data);
+    axiosSecure.post("reviews", data).then((res) => {
       if (res.data.insertId) {
         console.log("added");
       }

@@ -3,9 +3,11 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useAxios from "../hooks/useAxios";
 
 export default function AddService() {
   const { user } = useContext(AuthContext);
+  const axiosSecure = useAxios();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -34,7 +36,7 @@ export default function AddService() {
     };
     console.log(service);
 
-    axios.post("http://localhost:5000/services", service).then((res) => {
+    axiosSecure.post("services", service).then((res) => {
       if (res.data.insertedId) {
         Swal.fire({
           title: "Success!",

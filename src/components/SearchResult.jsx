@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import useAxios from "../hooks/useAxios";
 
 export default function SearchResult({ keyword }) {
   const [services, setServices] = useState([]);
+  const axiosSecure = useAxios();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/search", {
+    axiosSecure
+      .get("search", {
         params: { keyword: keyword },
       })
       .then((res) => setServices(res.data));
@@ -15,7 +17,7 @@ export default function SearchResult({ keyword }) {
 
   return (
     <div className="w-5/6 mx-auto mt-16">
-        <p className="my-8 text-lg">Search Results: {services.length}</p>
+      <p className="my-8 text-lg">Search Results: {services.length}</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => (
           <Card key={service._id} service={service} />

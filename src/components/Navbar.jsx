@@ -1,20 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-// import "./Theme.css";
 
 export default function Navbar() {
   const { user, userSignOut, loading } = useContext(AuthContext);
-  //   const [theme, setTheme] = useState("light");
-
-  //   useEffect(() => {
-  //     document.documentElement.setAttribute("data-theme", theme);
-  //   }, [theme]);
-
-  //   const toggleTheme = () => {
-  //     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  //   };
-
+  
   const links = (
     <>
       <li>
@@ -107,7 +97,7 @@ export default function Navbar() {
           </div>
           <Link
             to={"/"}
-            className="btn btn-ghost text-xl animate__animated animate__flash"
+            className="btn btn-ghost text-xl"
           >
             EchoViews
           </Link>

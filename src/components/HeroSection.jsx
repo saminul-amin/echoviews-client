@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import useAxios from "../hooks/useAxios";
 
 export default function HeroSection() {
   const [data, setData] = useState([]);
+  const axiosSecure = useAxios();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/limited-services")
-      .then((res) => setData(res.data));
+    axiosSecure.get("limited-services").then((res) => setData(res.data));
   }, []);
 
   return (

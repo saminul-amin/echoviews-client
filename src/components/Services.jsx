@@ -25,7 +25,7 @@ export default function Services() {
     category === "All"
       ? data
       : data.filter((service) => service.category === category);
-  console.log(filteredServices);
+  // console.log(filteredServices);
 
   // console.log(categories);
 

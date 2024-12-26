@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from "react";
 import Intro from "./Intro";
 import { AuthContext } from "../providers/AuthProvider";
@@ -6,6 +5,7 @@ import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
+import useAxios from "../hooks/useAxios";
 
 const heading = "My Services";
 const desc =
@@ -17,19 +17,21 @@ export default function MyServices() {
   const [service, setService] = useState({});
   const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
+  const axiosSecure = useAxios();
+
   const email = user.email;
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/my-services", {
+    axiosSecure
+      .get("my-services", {
         params: { email: email },
       })
       .then((res) => console.log(res.data));
   }, []);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/my-services?email=${email}`)
+    axiosSecure
+      .get(`my-services?email=${email}`)
       .then((res) => setData(res.data));
   }, [data]);
 
@@ -74,11 +76,8 @@ export default function MyServices() {
     console.log(updatedService);
     console.log(service._id);
 
-    axios
-      .put(
-        `http://localhost:5000/update-service/${service._id}`,
-        updatedService
-      )
+    axiosSecure
+      .put(`update-service/${service._id}`, updatedService)
       .then((res) => {
         console.log(res.data);
         if (res.data.modifiedCount) {
@@ -109,7 +108,7 @@ export default function MyServices() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/my-services/${id}`).then((res) => {
+    axiosSecure.delete(`my-services/${id}`).then((res) => {
       if (res.data.deletedCount > 0) {
         Swal.fire({
           title: "Deleted!",
@@ -133,7 +132,7 @@ export default function MyServices() {
           value={search}
         />
       </div>
-      <div >
+      <div>
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}

@@ -40,7 +40,7 @@ export default function SignUp() {
           });
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         toast("Something went wrong. Try Again!");
       });
   };
@@ -55,7 +55,7 @@ export default function SignUp() {
       })
       .catch((err) => {
         toast("Sign In Failed. Try Again!");
-        console.log(err);
+        // console.log(err);
       });
   };
 

@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
+import useAxios from "../hooks/useAxios";
 
 export default function AllReviews({ title }) {
   const [allReviews, setAllReviews] = useState([]);
+  const axiosSecure = useAxios();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/reviews")
-      .then((res) => setAllReviews(res.data));
+    axiosSecure.get("reviews").then((res) => setAllReviews(res.data));
   }, []);
   //   console.log(allReviews);
 

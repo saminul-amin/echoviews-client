@@ -39,7 +39,7 @@ export default function SignIn() {
       })
       .catch((err) => {
         toast("Sign In Failed. Try Again!");
-        console.log(err);
+        // console.log(err);
       });
   };
 
