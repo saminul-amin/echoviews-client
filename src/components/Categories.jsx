@@ -14,7 +14,7 @@ export default function Categories({ categories, onCategoryChange }) {
       <select
         value={selectedCategory}
         onChange={hanldeCategoryChange}
-        className="select select-bordered w-1/4"
+        className="select select-bordered w-1/4 shadow-lg bg-base-200"
       >
         {categories.map((category, idx) => (
           <option key={idx} value={category}>

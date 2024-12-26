@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Intro from "./Intro";
+import { motion } from "framer-motion";
 
 const heading = "Meet Our Partners";
 const desc =
@@ -15,9 +16,14 @@ export default function MeetPartners() {
   }, []);
 
   return (
-    <div>
+    <div className="w-5/6 mx-auto">
       <Intro heading={heading} desc={desc} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-5/6 mx-auto gap-12">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+      >
         {partners.map((company, idx) => (
           <div
             key={idx}
@@ -32,7 +38,7 @@ export default function MeetPartners() {
             </a>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

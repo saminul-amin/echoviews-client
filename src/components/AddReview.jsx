@@ -29,7 +29,7 @@ export default function AddReview({ service }) {
   };
 
   return (
-    <div className="mt-24 w-1/3 mx-auto">
+    <div className="mt-24 w-2/3 mx-auto">
       <div className="bg-base-200 p-5 rounded-xl">
         <textarea
           ref={textAreaRef}

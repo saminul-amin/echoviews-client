@@ -121,10 +121,10 @@ export default function MyServices() {
   };
 
   return (
-    <div>
+    <div className="w-5/6 mx-auto">
       <Intro heading={heading} desc={desc} />
       {/* {data.length} */}
-      <div className="flex items-center w-11/12 justify-end my-8">
+      <div className="flex items-center justify-end my-8">
         <input
           type="text"
           className="border-gray-500 border-2 rounded-xl py-3 px-4 w-1/3"
@@ -133,7 +133,7 @@ export default function MyServices() {
           value={search}
         />
       </div>
-      <div className="w-5/6 mx-auto">
+      <div >
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}

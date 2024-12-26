@@ -99,10 +99,10 @@ export default function MyReviews() {
   };
 
   return (
-    <div>
-      <Intro heading={heading} desc={desc} />
+    <div className="w-5/6 mx-auto">
+      <Intro heading={heading} desc={desc}/>
       {/* {data.length} */}
-      <div className="w-5/6 mx-auto">
+      <div>
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
@@ -111,8 +111,8 @@ export default function MyReviews() {
                 <th></th>
                 <th>Service Title</th>
                 <th className="text-center">Review</th>
-                <th>Rating</th>
-                <th>Date</th>
+                <th className="text-center">Rating</th>
+                <th className="text-center">Date</th>
                 <th></th>
               </tr>
             </thead>
@@ -123,7 +123,7 @@ export default function MyReviews() {
                   <th>{idx + 1}</th>
                   <td>{review.service.title}</td>
                   <td>{review.review}</td>
-                  <td>{review.rating}</td>
+                  <td className="text-center">{review.rating}</td>
                   <td>{review.date}</td>
                   <td>
                     <div className="join join-vertical">

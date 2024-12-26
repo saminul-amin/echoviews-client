@@ -7,9 +7,6 @@ export default function HeroSection() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // fetch("/fakeData.json")
-    //   .then((res) => res.json())
-    //   .then((data) => setData(data));
     axios
       .get("http://localhost:5000/limited-services")
       .then((res) => setData(res.data));

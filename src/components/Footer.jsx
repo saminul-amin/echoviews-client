@@ -7,8 +7,8 @@ import {
 
 export default function Footer() {
   return (
-    <div className="mt-24 mb-24 text-center">
-      <h2 className="text-3xl font-bold">EchoViews</h2>
+    <div className="mt-16 pb-16 text-center bg-base-300 rounded-t-2xl">
+      <h2 className="pt-8 text-3xl font-bold">EchoViews</h2>
       <p className="text-gray-500 mx-3 md:mx-0 my-6 font-semibold text-lg">
         Express your experiences, connect with others, and amplify your voice
         <br />

@@ -6,7 +6,7 @@ export default function Card({ service }) {
   //   console.log(service);
   return (
     <div>
-      <div className="card bg-base-100 w-96 shadow-xl">
+      <div className="card bg-base-100 w-80 md:w-84 lg:w-88 xl:w-96 shadow-xl">
         <figure>
           <img src={image} alt={title} className="h-96 rounded-2xl w-full" />
         </figure>

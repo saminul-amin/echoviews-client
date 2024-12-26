@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import Intro from "./Intro";
 import AddReview from "./AddReview";
+import { motion } from "framer-motion";
 
 export default function ServiceDetails() {
   const location = useLocation();
@@ -13,11 +14,13 @@ export default function ServiceDetails() {
     "Delivering professional solutions tailored to your needs, with a focus on quality, creativity, and results-driven outcomes.";
 
   return (
-    <div>
+    <div className="w-5/6 mx-auto">
       <Intro heading={heading} desc={desc} />
 
-      <div>
-        <div className="w-1/2 mx-auto card lg:card-side grid grid-cols-1 lg:grid-cols-2 bg-base-100 shadow-xl">
+      <motion.div initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}>
+        <div className="w-2/3 mx-auto card lg:card-side grid grid-cols-1 lg:grid-cols-2 bg-base-100 shadow-xl">
           <figure>
             <img
               src={image}
@@ -34,7 +37,7 @@ export default function ServiceDetails() {
             <p>Visit <a href={website}>{website}</a> for more!</p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <AddReview service={service} />
     </div>
