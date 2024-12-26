@@ -1,5 +1,4 @@
 import { SlLike, SlDislike } from "react-icons/sl";
-// import {  } from "react-icons/sl";
 
 export default function ReviewCard({ review }) {
   return (

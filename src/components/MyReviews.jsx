@@ -6,6 +6,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Rating from "./Rating";
 import Swal from "sweetalert2";
+import { SlLike, SlDislike } from "react-icons/sl";
 
 const heading = "My Reviews";
 const desc =
@@ -100,53 +101,51 @@ export default function MyReviews() {
 
   return (
     <div className="w-5/6 mx-auto">
-      <Intro heading={heading} desc={desc}/>
+      <Intro heading={heading} desc={desc} />
       {/* {data.length} */}
       <div>
-        <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr className="text-lg">
-                <th></th>
-                <th>Service Title</th>
-                <th className="text-center">Review</th>
-                <th className="text-center">Rating</th>
-                <th className="text-center">Date</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              {data.map((review, idx) => (
-                <tr key={idx}>
-                  <th>{idx + 1}</th>
-                  <td>{review.service.title}</td>
-                  <td>{review.review}</td>
-                  <td className="text-center">{review.rating}</td>
-                  <td>{review.date}</td>
-                  <td>
-                    <div className="join join-vertical">
-                      {/* <Link to={"/update-review"} state={review}> */}
-                      <button
-                        className="btn join-item text-xl"
-                        onClick={() => openModal(review)}
-                      >
-                        <FaEdit />
-                      </button>
-                      {/* </Link> */}
-                      <button
-                        onClick={() => handleDelete(review._id)}
-                        className="btn join-item text-xl"
-                      >
-                        <MdDelete />
-                      </button>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {data.map((review) => (
+            <div key={review._id}>
+              <div className="card bg-base-100 w-84 h-[320px] lg:h-72 shadow-xl">
+                <div className="card-body">
+                  <h2 className="card-title">{review.service.title}</h2>
+                  <p>{review.review}</p>
+                  <div className="flex justify-between items-center gap-2 mt-3">
+                    <div className="justify-start">
+                      <p className="italic text-gray-500">
+                        Posted on: {review.date}
+                      </p>
                     </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    <div className="justify-end">
+                      <div className="join">
+                        <button className="btn join-item">
+                          <SlLike />
+                        </button>
+                        <button className="btn join-item">
+                          <SlDislike />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="join mx-auto mb-5">
+                  <button
+                    className="btn join-item text-xl"
+                    onClick={() => openModal(review)}
+                  >
+                    <FaEdit /> <span className="text-lg lg:inline hidden">Update Review</span>
+                  </button>
+                  <button
+                    onClick={() => handleDelete(review._id)}
+                    className="btn join-item text-xl"
+                  >
+                    <MdDelete /> <span className="text-lg lg:inline hidden">Delete Review</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       {isOpen && (
@@ -185,4 +184,18 @@ export default function MyReviews() {
       )}
     </div>
   );
+}
+
+{
+  /* <div className="join join-vertical">
+  <button className="btn join-item text-xl" onClick={() => openModal(review)}>
+    <FaEdit />
+  </button>
+  <button
+    onClick={() => handleDelete(review._id)}
+    className="btn join-item text-xl"
+  >
+    <MdDelete />
+  </button>
+</div>; */
 }
