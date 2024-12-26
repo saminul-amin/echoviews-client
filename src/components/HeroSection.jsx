@@ -12,7 +12,6 @@ export default function HeroSection() {
       .then((res) => setData(res.data));
   }, []);
 
-  console.log(data);
   return (
     <div className="w-5/6 mx-auto">
       <h2 className="text-center text-4xl font-semibold">Featured Services</h2>

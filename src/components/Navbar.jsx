@@ -134,19 +134,6 @@ export default function Navbar() {
           </div>
         ) : (
           <div className="navbar-end gap-3">
-            <div className="flex justify-end">
-              <input
-                type="checkbox"
-                className="checkbox"
-                id="checkbox"
-                // onClick={toggleTheme}
-              />
-              <label htmlFor="checkbox" className="checkbox-label">
-                <i className="fas fa-moon"></i>
-                <i className="fas fa-sun"></i>
-                <span className="ball"></span>
-              </label>
-            </div>
             <Link to={"/signin"}>
               <button className="bg-base-300 px-4 py-3 rounded-xl">
                 Sign In

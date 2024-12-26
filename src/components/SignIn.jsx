@@ -6,8 +6,6 @@ import { toast } from "react-toastify";
 
 export default function SignIn() {
   const { setUser, userSignIn, signInWithGoogle } = useContext(AuthContext);
-  const [error, setError] = useState({});
-  const [passError, setPassError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -17,13 +15,7 @@ export default function SignIn() {
     const email = form.email.value;
     const password = form.password.value;
     // console.log({ email, password });
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
-
-    if (!passwordRegex.test(password)) {
-      setPassError(
-        "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long."
-      );
-    }
+    
     userSignIn(email, password)
       .then((result) => {
         const user = result.user;
@@ -32,7 +24,6 @@ export default function SignIn() {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        setError({ ...error, login: err.code });
         // alert("invalid credentials");
         toast("Invalid Credentials!");
       });
@@ -82,9 +73,6 @@ export default function SignIn() {
               className="input input-bordered"
               required
             />
-            {passError !== "" && (
-              <label className="label text-sm text-red-600">{passError}</label>
-            )}
             <label className="label">
               <Link className="label-text-alt link link-hover">
                 Forgot password?

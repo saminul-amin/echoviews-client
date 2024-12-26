@@ -7,19 +7,25 @@ import { toast } from "react-toastify";
 export default function SignUp() {
   const { createNewUser, setUser, updateUserProfile, signInWithGoogle } =
     useContext(AuthContext);
-  const [error, setError] = useState({});
+  const [passError, setPassError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     const name = form.get("name");
-    if (name.length < 3) {
-      setError({ ...error, name: "Name should be more than 2 characters" });
-    }
     const email = form.get("email");
     const photo = form.get("photo");
     const password = form.get("password");
+
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      setPassError(
+        "Password MUST have an uppercase letter and a lowercase letter and MUST be of at least 6 characters"
+      );
+      return;
+    }
+
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
@@ -72,9 +78,6 @@ export default function SignUp() {
               required
             />
           </div>
-          {error.name && (
-            <label className="label text-sx text-red-500">{error.name}</label>
-          )}
 
           <div className="form-control">
             <label className="label">
@@ -114,7 +117,9 @@ export default function SignUp() {
               required
             />
           </div>
-          {/* {error.register && <label className="label">{error.register}</label>} */}
+          {passError !== "" && (
+            <label className="label text-sm text-red-600">{passError}</label>
+          )}
 
           <div className="form-control mt-6">
             <button className="btn btn-neutral font-semibold text-lg text-white rounded-none">
