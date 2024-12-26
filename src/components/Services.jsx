@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Intro from "./Intro";
 import Card from "./Card";
 import Categories from "./Categories";
-import { useState } from "react";
 
 const heading = "Services Tailored for You";
 const desc =

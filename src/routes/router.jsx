@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import PrivateRoute from "../routes/PrivateRoute";
+
 import Root from "../components/Root";
 import ErrorPage from "../components/ErrorPage";
 import SignIn from "../components/SignIn";
@@ -9,7 +11,6 @@ import ServiceDetails from "../components/ServiceDetails";
 import AddService from "../components/AddService";
 import MyServices from "../components/MyServices";
 import MyReviews from "../components/MyReviews";
-import PrivateRoute from "../routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {

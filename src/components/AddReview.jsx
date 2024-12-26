@@ -1,8 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import Rating from "./Rating";
-import axios from "axios";
 import useAxios from "../hooks/useAxios";
+import Rating from "./Rating";
 
 export default function AddReview({ service }) {
   const { user } = useContext(AuthContext);

@@ -1,7 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import Card from "./Card";
 import useAxios from "../hooks/useAxios";
+import Card from "./Card";
 
 export default function SearchResult({ keyword }) {
   const [services, setServices] = useState([]);

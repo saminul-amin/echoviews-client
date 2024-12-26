@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import Card from "./Card";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
+import { Link } from "react-router-dom";
+import Card from "./Card";
 
 export default function HeroSection() {
   const [data, setData] = useState([]);

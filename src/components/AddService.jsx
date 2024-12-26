@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
-import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
+import Swal from "sweetalert2";
 
 export default function AddService() {
   const { user } = useContext(AuthContext);

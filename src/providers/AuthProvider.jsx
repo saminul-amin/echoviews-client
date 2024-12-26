@@ -11,7 +11,6 @@ import {
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import axios from "axios";
-import useAxios from "../hooks/useAxios";
 
 export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
@@ -20,7 +19,6 @@ const auth = getAuth(app);
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const axiosSecure = useAxios();
 
   const createNewUser = (email, password) => {
     setLoading(true);

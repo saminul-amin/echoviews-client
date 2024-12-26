@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import Intro from "./Intro";
 import AddReview from "./AddReview";
-import { motion } from "framer-motion";
 import AllReviews from "./AllReviews";
+import { motion } from "framer-motion";
 
 export default function ServiceDetails() {
   const location = useLocation();

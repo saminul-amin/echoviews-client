@@ -1,13 +1,14 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import Intro from "./Intro";
+import useAxios from "../hooks/useAxios";
 import { AuthContext } from "../providers/AuthProvider";
-import axios from "axios";
-import { FaEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
+
+import Intro from "./Intro";
 import Rating from "./Rating";
 import Swal from "sweetalert2";
+
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 import { SlLike, SlDislike } from "react-icons/sl";
-import useAxios from "../hooks/useAxios";
 
 const heading = "My Reviews";
 const desc =

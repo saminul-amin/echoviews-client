@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
+import { FcGoogle } from "react-icons/fc";
 
 export default function SignIn() {
   const { setUser, userSignIn, signInWithGoogle } = useContext(AuthContext);

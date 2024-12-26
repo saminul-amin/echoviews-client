@@ -1,11 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import Intro from "./Intro";
 import { AuthContext } from "../providers/AuthProvider";
-import axios from "axios";
+import useAxios from "../hooks/useAxios";
+import Intro from "./Intro";
+import Swal from "sweetalert2";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-import Swal from "sweetalert2";
-import useAxios from "../hooks/useAxios";
 
 const heading = "My Services";
 const desc =
@@ -132,7 +131,7 @@ export default function MyServices() {
           value={search}
         />
       </div>
-      <div>
+      <div className={searchedData.length ? "inline" : "hidden"}>
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}

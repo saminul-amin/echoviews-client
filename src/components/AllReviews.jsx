@@ -1,7 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import ReviewCard from "./ReviewCard";
 import useAxios from "../hooks/useAxios";
+import ReviewCard from "./ReviewCard";
 
 export default function AllReviews({ title }) {
   const [allReviews, setAllReviews] = useState([]);

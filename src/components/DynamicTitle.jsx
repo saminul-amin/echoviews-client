@@ -13,6 +13,7 @@ const DynamicTitle = () => {
       "/add-service": "Add Service | EchoViews",
       "/my-reviews": "My Reviews | EchoViews",
       "/my-services": "My Services | EchoViews",
+      "/services": "Services | EchoViews",
       "/service-details": "Service Details | EchoViews",
     };
 
