@@ -54,14 +54,14 @@ export default function AuthProvider({ children }) {
       if (currentUser?.email) {
         const user = { email: currentUser.email };
         axios
-          .post("http://localhost:5000/jwt", user, { withCredentials: true })
+          .post("https://echoviews.vercel.app/jwt", user, { withCredentials: true })
           .then((res) => {
             console.log("log in token", res.data);
             setLoading(false);
           });
       } else {
         axios
-          .post("http://localhost:5000/logout", {}, { withCredentials: true })
+          .post("https://echoviews.vercel.app/logout", {}, { withCredentials: true })
           .then((res) => {
             console.log("logout token", res.data);
             setLoading(false);

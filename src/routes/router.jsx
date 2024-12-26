@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () => fetch("https://echoviews.vercel.app/services"),
       },
       {
         path: "service-details",
