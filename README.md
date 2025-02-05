@@ -45,7 +45,7 @@ So, step right up, type your heart out, and let your reviews echo louder than yo
 
 ## 🚀 Deployment Highlights  
 **EchoViews** is live and thriving on Vercel—delivering blazing-fast performance for users across the globe. Check it out here:  
-🔗 [Live Demo](https://your-vercel-link-here.vercel.app)  
+🔗 [Live Demo](https://echoviews.web.app/)  
 
 ---
 
